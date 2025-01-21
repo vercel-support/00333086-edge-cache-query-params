@@ -8,10 +8,5 @@ export async function GET(request: NextRequest) {
     [...params.entries()].map(([key, value]) => `${key}: ${value}`).join('\n')
   );
 
-  return new Response(new Date().toISOString(), {
-    headers: {
-      'content-type': 'text/plain',
-      'cache-control': 'public, max-age=30, s-max-age=60',
-    },
-  });
+  return new Response(new Date().toISOString());
 }
